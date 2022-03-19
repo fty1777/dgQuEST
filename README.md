@@ -55,7 +55,7 @@ echo <configs> > QuEST.conf # or `cp <DGQUEST_ROOT>/configs/QuEST.conf .` to cre
 
 ## Code structure
 
-Our work are mainly in `/src/cpp` directory, in which:
+Our work is mainly in `/src/cpp` directory, in which:
 
 - `QuEST_backend_distributed.cpp` contains the implementation of the hybrid memory management and main logic of page-table-based memory management, pipelined communication, etc. 
 - `QuEST_gpu_kernel.cu` contains the calculation part including fused kernel, reordering, etc.
