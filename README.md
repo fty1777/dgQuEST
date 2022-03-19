@@ -4,7 +4,7 @@ Source code is now available. Build/run guidelines and experimental setup descri
 ## Dependencies
 
 - NVIDIA CUDA Toolkit (tested on CUDA 11.1, other versions are not tested)
-- MPI implementation (tested on MPICH 4.0.1 and OpenMPI 4.1.2, other versions are not tested)
+- An MPI implementation (tested on MPICH 4.0.1 and OpenMPI 4.1.2, other versions are not tested)
 
 ## Experimental Setup
 
@@ -14,6 +14,8 @@ The evaluation is done in the following environment
 - CPU: Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
 - GPU: NVIDIA Tesla V100 32GB
 - InfiniBand NIC: ConnectX-3 40 Gb/sec (4X FDR10)
+
+Other similar environments should also work but it's not ensured since we have not tested them.
 
 ## How to Build
 
@@ -50,3 +52,12 @@ Before running the simulator, a config file is required to be created. The confi
 echo <configs> > QuEST.conf # or `cp <DGQUEST_ROOT>/configs/QuEST.conf .` to create the file
 ./test
 ```
+
+## Code structure
+
+Our work are mainly in `/src/cpp` directory, in which:
+
+- `QuEST_backend_distributed.cpp` contains the implementation of the hybrid memory management and main logic of page-table-based memory management, pipelined communication, etc. 
+- `QuEST_gpu_kernel.cu` contains the calculation part including fused kernel, reordering, etc.
+- `time_predictor.c/time_predictor.h` contains the analytical prediction model, the interface is a TimePredictor class.
+- `DAG.cpp` contains the DAG-based gate aggregation mechanism and the heuristic DFS algorithm in our paper.
