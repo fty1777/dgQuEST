@@ -44,9 +44,9 @@ cd build
 
 To change the sampled range of the nubmer of qubits, edit `sampler/main.cpp`. The sampled data are stored in file `predict_data.txt` in text format. The name should not be changed because the simulator will use the file with this fixed filename.
 
-Then run the simulator:
+Before running the simulator, a config file is required to be created. The config file must contains 2 to 3 integers, which are the minK, maxK and designatedK, respectively. The minK and maxK determined the searching range of the analytical model in our paper. designatedK is not necessary. If designatedK is given, the simulator will run with this given K instead of the optimum one predicted by the model. If designatedK is not given, the simulator will use the K selected by the prediction model. After creating the config file, run the simulator:
 
 ```bash
-echo <configs> > QuEST.conf # or `cp <DGQUEST_ROOT>/configs/QuEST.conf .`
+echo <configs> > QuEST.conf # or `cp <DGQUEST_ROOT>/configs/QuEST.conf .` to create the file
 ./test
 ```
