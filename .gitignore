@@ -1,0 +1,15 @@
+build/*
+*.o
+*.dat
+*.log
+*.bin
+test
+random
+GHZ_QFT
+a.out
+.vscode/*
+.idea
+cmake-build-*
+core.*
+CMakeCache.txt
+CMakeFiles

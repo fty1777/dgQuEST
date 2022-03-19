@@ -1,0 +1,6 @@
+[submodule "3rd-party/easyloggingpp"]
+	path = 3rd-party/easyloggingpp
+	url = https://github.com/amrayn/easyloggingpp.git
+[submodule "3rd-party/fmtlib"]
+	path = 3rd-party/fmtlib
+	url = https://github.com/fmtlib/fmt.git
